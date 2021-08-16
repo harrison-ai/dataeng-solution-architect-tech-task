@@ -1,0 +1,8 @@
+services:
+
+  terraform:
+    image: hashicorp/terraform:1.0.4
+    volumes:
+      - '~/.aws:/root/.aws'
+      - '.:/app'
+    working_dir: '/app'
