@@ -2,12 +2,23 @@
 
 ## Question One
 
-Harrison.ai has an S3 bucket in their own AWS account named `harrison-ai-landing`  A business partner named annalise.ai is required to copy data from an S3 bucket in their own AWS account into the `harrison-ai-landing` bucket providing harrison.ai with complete ownership of the data.  The Terraform templates that were used to create the harrison-ai-landing bucket are available in this repo.  You are required to:
+Harrison.ai has an S3 bucket in their own AWS account named `harrison-ai-landing`  A business partner named annalise.ai is required to copy data from an S3 bucket in their own AWS account into the `harrison-ai-landing` bucket providing harrison.ai with complete ownership of the data.  The Terraform templates that were used to create the harrison-ai-landing bucket are available in this repo.
+
+The S3 bucket in annalise.ai was created manually in the AWS Console and already contains all the data ready to be copied.  It is configured as follows:
+- Name: annalise-ai-datalake
+- No versioning
+- Private acl
+- AES256 encryption
+
+
+You are required to:
 
 
 ### Instructions:
 
-- Generate the Terraform templates for the business partner's S3 bucket and associated resources required to execute the data copy.
+- Generate the Terraform templates to import the annalise.ai into Terraform in order to manage it as IaC, including any suggested configuration improvements.
+- Detail how to import the bucket into Terraform
+- Generate the Terraform templates for any associated resources required to execute the data copy.
 - Modify the supplied terraform templates if required
 - Use Git version control and commit your solution to a Git repository that we can access. (Github, Bitbucket or Gitlab are the obvious choices)
 - Please include a README, citing any third-party code, tutorials or documentation you have used.  If your solution includes any unusual deployment steps, please note them in your README file
