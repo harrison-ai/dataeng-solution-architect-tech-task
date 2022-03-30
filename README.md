@@ -2,12 +2,12 @@
 
 ## Question One
 
-Harrison.ai has an S3 bucket in their own AWS account named `harrison-ai-landing`  A business partner named annalise.ai is required to copy data from an S3 bucket in their own AWS account into the `harrison-ai-landing` bucket providing harrison.ai with complete ownership of the data.  The Terraform templates that were used to create the harrison-ai-landing bucket are available in this repo.
+harrison.ai and annalise.ai are business partners.  harrison.ai has an S3 bucket in their AWS Organisation named `harrison-ai-landing`.  Their business partner annalise.ai is required to copy data from an S3 bucket in their own AWS account into the `harrison-ai-landing` bucket, providing harrison.ai with complete ownership of the data.  The Terraform templates that were used to create the `harrison-ai-landing` bucket are available in this repo in the `harrison.ai` directory.
 
-The S3 bucket in annalise.ai was created manually in the AWS Console and already contains all the data ready to be copied.  It is configured as follows:
+The S3 bucket in annalise.ai was created manually in the AWS Console and already contains all the data ready to be copied.  It contains approximately 100 million objects with an average size of 100KB.  The bucket is configured as follows:
 - Name: annalise-ai-datalake
 - No versioning
-- Private acl
+- Private ACL
 - AES256 encryption
 
 
@@ -16,12 +16,13 @@ You are required to:
 
 ### Instructions:
 
-- Generate the Terraform templates to import the annalise.ai into Terraform in order to manage it as IaC, including any suggested configuration improvements.
-- Detail how to import the bucket into Terraform
-- Generate the Terraform templates for any associated resources required to execute the data copy.
-- Modify the supplied terraform templates if required
+- Generate the Terraform templates to import the `annalise-ai-datalake` bucket into Terraform in order to manage it as IaC, including any suggested configuration improvements that could be made to the harrison.ai Terraform templates.
+- Detail how to import the bucket into Terraform.
+- Outline how you would copy the data in `annalise-ai-datalake` to `harrison-ai-landing`.  You may wish to provide Terraform templates for any resources required, but it is not expected.
+
 - Use Git version control and commit your solution to a Git repository that we can access. (Github, Bitbucket or Gitlab are the obvious choices)
 - Please include a README, citing any third-party code, tutorials or documentation you have used.  If your solution includes any unusual deployment steps, please note them in your README file
+
 
 ## Question Two
 
@@ -45,10 +46,12 @@ f2ca1bb6c7e907d06dafe4687e579fce76b37e4e93b7605022da52e6ccc26fd2.ext
 
 Additionally, describe how you would:
 
-- Speed up the bucket listing process for very large buckets
+- Speed up the bucket listing process for very large buckets containing millions of objects
 - Make the process idempotent
 
+
 ## Question Three (for discussion during the interview)
+
 
 **This question will be asked and discussed during the interview**.  It is provided here to provide ample
 time for any background reading or research that may be required.
